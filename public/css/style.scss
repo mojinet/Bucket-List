@@ -1,0 +1,78 @@
+$mainColor : #6cd2a9;
+/* General */
+@import url('https://fonts.googleapis.com/css2?family=Uchen&display=swap');
+
+body{
+  font-family: 'Uchen', serif;
+  margin: 0;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color : inherit;
+}
+
+/* Layout */
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.l_header{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.l_footer{
+  display: flex;
+  justify-content: center;
+}
+
+.l_main{
+  flex-grow: 1;
+  margin : 10px;
+}
+
+/* Module */
+.header{
+  &__title{
+    font-weight: bold;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  &__nav{
+    flex-grow: 1;
+
+    &__wrapper{
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    &__item{
+
+    }
+  }
+}
+
+/* Theme */
+.l_header{
+  background-color: $mainColor;
+}
+
+.l_footer{
+  background-color: $mainColor;
+}
+
+.l_main{
+
+}

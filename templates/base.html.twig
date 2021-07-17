@@ -10,21 +10,26 @@
     <title>{% block title %}Bucket-List | {% endblock %}</title>
 </head>
 <body>
-    <header>
-        <img src="{{ asset('img/logo.png') }}" alt="Bucket-List">
-        <span>Bucket-List</span>
+    <header class="l_header">
+        <div class="header__title">
+            <img src="{{ asset('img/logo.png') }}" alt="Bucket-List">
+            <span>Bucket-List</span>
+        </div>
+
+        <nav class="header__nav">
+            <ul class="header__nav__wrapper">
+                <li class="header__nav__item"><a href="{{ path('main_home') }}" title="Home page">Home</a></li>
+                <li class="header__nav__item"><a href="{{ path('main_aboutUs') }}" title="About us">About Us</a></li>
+                <li><a href="{{ path('wish_list') }}" title="Wish List">Wish List</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="{{ path('main_home') }}">Home</a></li>
-        </ul>
-    </nav>
-    <main>
+    <main class="l_main">
         {% block body %}{% endblock %}
     </main>
 
-    <footer>
+    <footer class="l_footer">
         <span>© Bucket-List {{ "now"|date('Y') }}</span>
     </footer>
 </body>
