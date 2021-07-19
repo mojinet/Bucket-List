@@ -1,9 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {# todo : afficher la liste des souhaits #}
     <h1>Wish List</h1>
-    <p>Oh wait is not implemented yet ! come back later ;)</p>
+    <p>C'est pas comme avec un génie, ici vous avez le droit à plus de 3 voeux ;)</p>
+    <div class="wish">
+        {% for wish in wishList %}
+        <div class="wish__item">
+            <h2>{{ wish.title }}</h2>
+            <div class="wish__item__info">
+                <span>Par {{ wish.author|upper }}</span>
+                <span>Le {{ wish.dateCreated|date('d/m/Y à h:m:s') }}</span>
+            </div>
+            <a href="{{ path('wish_detail', {'id': wish.id}) }}">Voir plus</a>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock %}
 
 {% block title %}

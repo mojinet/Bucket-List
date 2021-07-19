@@ -6,6 +6,16 @@
 
 {% block body %}
     <h1>Detail of a wish</h1>
-    {# todo : afficher le detail d'un souhait #}
+    <div class="wish">
+        <div class="wish__item">
+            <h2>{{ wish.title }}</h2>
+            <p>{{ wish.description }}</p>
+            <div class="wish__item__info">
+                <span>Par {{ wish.author|upper }}</span>
+                <span>Le {{ wish.dateCreated|date('d/m/Y à h:m:s') }}</span>
+            </div>
+            <a href="{{ path('wish_list') }}">Revenir en arriere</a>
+        </div>
+    </div>
 {% endblock %}
 

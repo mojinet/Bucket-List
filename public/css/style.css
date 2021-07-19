@@ -53,8 +53,43 @@ body {
 .header__nav__wrapper {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 30px;
 }
+.wish {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.wish__item {
+  padding: 10px;
+  border-radius: 0 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #6cd2a9;
+  width: 90%;
+  max-width: 1200px;
+  margin-bottom: 10px;
+}
+.wish__item__info {
+  align-self: flex-end;
+}
+.wish__item a {
+  font-weight: bold;
+  border: 3px black solid;
+  padding: 5px 20px;
+  transition-duration: 0.5s;
+  text-align: center;
+  align-self: flex-end;
+  width: 200px;
+}
+.wish__item a:hover {
+  background-color: white;
+  transition-duration: 0.5s;
+}
+
 /* Theme */
 .l_header {
   background-color: #6cd2a9;

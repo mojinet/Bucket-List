@@ -56,10 +56,49 @@ body{
     &__wrapper{
       display: flex;
       justify-content: flex-end;
-      gap: 10px;
+      gap: 30px;
     }
     &__item{
 
+    }
+  }
+}
+
+.wish{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  &__item{
+    padding: 10px;
+    border-radius: 0 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: $mainColor;
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 10px;
+
+    &__info{
+      align-self: flex-end;
+    }
+
+    a{
+      font-weight: bold;
+      border: 3px black solid;
+      padding: 5px 20px;
+      transition-duration: 0.5s;
+      text-align: center;
+      align-self: flex-end;
+      width: 200px;
+
+      &:hover{
+        background-color: white;
+        transition-duration: 0.5s;
+      }
     }
   }
 }
