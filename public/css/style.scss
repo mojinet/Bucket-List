@@ -22,17 +22,20 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .l_header{
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  width: 100%;
 }
 
 .l_footer{
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .l_main{
@@ -102,6 +105,41 @@ body{
     }
   }
 }
+
+.add_wish{
+  max-width: 800px;
+
+  input, textarea{
+    width: 100%;
+  }
+
+  textarea{
+    height: 200px;
+  }
+
+  button{
+    border: 3px black solid;
+    background-color: $mainColor;
+    font-weight: bold;
+    transition-duration: 0.5s;
+    padding: 5px 10px;
+    width: 100%;
+
+    &:hover{
+      background-color: white;
+      transition-duration: 0.5s;
+    }
+  }
+}
+
+.flash-success{
+    margin: 20px;
+    padding: 20px 50px;
+    background-color: $mainColor;
+    border: 3px black solid;
+    border-radius: 20px;
+    font-weight: bold;
+  }
 
 /* Theme */
 .l_header{

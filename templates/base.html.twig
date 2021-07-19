@@ -19,11 +19,21 @@
         <nav class="header__nav">
             <ul class="header__nav__wrapper">
                 <li class="header__nav__item"><a href="{{ path('main_home') }}" title="Home page">Home</a></li>
-                <li class="header__nav__item"><a href="{{ path('main_aboutUs') }}" title="About us">About Us</a></li>
                 <li><a href="{{ path('wish_list') }}" title="Wish List">Wish List</a></li>
+                <li><a href="{{ path('wish_add') }}">Add wish</a></li>
+                <li class="header__nav__item"><a href="{{ path('main_aboutUs') }}" title="About us">About Us</a></li>
             </ul>
         </nav>
     </header>
+
+    {# read and display all flash messages #}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
 
     <main class="l_main">
         {% block body %}{% endblock %}

@@ -20,17 +20,20 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .l_header {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  width: 100%;
 }
 
 .l_footer {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .l_main {
@@ -88,6 +91,37 @@ body {
 .wish__item a:hover {
   background-color: white;
   transition-duration: 0.5s;
+}
+
+.add_wish {
+  max-width: 800px;
+}
+.add_wish input, .add_wish textarea {
+  width: 100%;
+}
+.add_wish textarea {
+  height: 200px;
+}
+.add_wish button {
+  border: 3px black solid;
+  background-color: #6cd2a9;
+  font-weight: bold;
+  transition-duration: 0.5s;
+  padding: 5px 10px;
+  width: 100%;
+}
+.add_wish button:hover {
+  background-color: white;
+  transition-duration: 0.5s;
+}
+
+.flash-success {
+  margin: 20px;
+  padding: 20px 50px;
+  background-color: #6cd2a9;
+  border: 3px black solid;
+  border-radius: 20px;
+  font-weight: bold;
 }
 
 /* Theme */
