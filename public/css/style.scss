@@ -22,14 +22,12 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 }
 
 .l_header{
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  width: 100%;
+  padding: 50px 20px !important;
 }
 
 .l_footer{
@@ -40,7 +38,7 @@ body{
 
 .l_main{
   flex-grow: 1;
-  margin : 10px;
+  padding: 20px;
 }
 
 /* Module */
@@ -54,7 +52,7 @@ body{
     gap: 10px;
   }
   &__nav{
-    flex-grow: 1;
+
 
     &__wrapper{
       display: flex;
@@ -72,6 +70,10 @@ body{
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+
+  h2{
+    margin:0;
+  }
 
   &__item{
     padding: 10px;
@@ -115,6 +117,10 @@ body{
 
   textarea{
     height: 200px;
+  }
+
+  select{
+    width: 100%;
   }
 
   button{

@@ -9,6 +9,12 @@
     <div class="wish">
         <div class="wish__item">
             <h2>{{ wish.title }}</h2>
+            {% if wish.categorie %}
+                <span>{{ wish.categorie.name }}</span>
+            {% else %}
+                <span>Aucune catégorie associé !</span>
+            {% endif %}
+
             <p>{{ wish.description }}</p>
             <div class="wish__item__info">
                 <span>Par {{ wish.author|upper }}</span>

@@ -20,14 +20,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 }
 
 .l_header {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  width: 100%;
+  padding: 50px 20px !important;
 }
 
 .l_footer {
@@ -38,7 +36,7 @@ body {
 
 .l_main {
   flex-grow: 1;
-  margin: 10px;
+  padding: 20px;
 }
 
 /* Module */
@@ -50,9 +48,6 @@ body {
   align-items: center;
   gap: 10px;
 }
-.header__nav {
-  flex-grow: 1;
-}
 .header__nav__wrapper {
   display: flex;
   justify-content: flex-end;
@@ -63,6 +58,9 @@ body {
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+}
+.wish h2 {
+  margin: 0;
 }
 .wish__item {
   padding: 10px;
@@ -101,6 +99,9 @@ body {
 }
 .add_wish textarea {
   height: 200px;
+}
+.add_wish select {
+  width: 100%;
 }
 .add_wish button {
   border: 3px black solid;
