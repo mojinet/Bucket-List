@@ -19,9 +19,19 @@
         <nav class="header__nav">
             <ul class="header__nav__wrapper">
                 <li class="header__nav__item"><a href="{{ path('main_home') }}" title="Home page">Home</a></li>
-                <li><a href="{{ path('wish_list') }}" title="Wish List">Wish List</a></li>
-                <li><a href="{{ path('wish_add') }}">Add wish</a></li>
+                {# Si l'utilisateur est connecté #}
+                {% if app.user %}
+                    <li><a href="{{ path('wish_list') }}" title="Wish List">Wish List</a></li>
+                    <li><a href="{{ path('wish_add') }}">Add wish</a></li>
+                    <li><a href="{{ path('app_logout') }}">Logout ({{ app.user.pseudo }})</a></li>
+                {# Si l'utilisateur n'est pas connecté #}
+                {% else %}
+                    <li><a href="{{ path('app_login') }}">Login</a></li>
+                    <li><a href="{{ path('app_register') }}">Register</a></li>
+                {% endif %}
+
                 <li class="header__nav__item"><a href="{{ path('main_aboutUs') }}" title="About us">About Us</a></li>
+
             </ul>
         </nav>
     </header>
