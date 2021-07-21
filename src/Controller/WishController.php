@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Wish;
 use App\Form\WishType;
 use App\Repository\WishRepository;
+use App\Service\Censurator;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -39,7 +40,7 @@ class WishController extends AbstractController
     /**
      * @Route("/wish/add", name="wish_add")
      */
-    public function add(Request $request, EntityManagerInterface $entityManager): Response
+    public function add(Request $request, EntityManagerInterface $entityManager, Censurator $censurator): Response
     {
         // on initialise une instance de wish
         $wish = new Wish();
@@ -48,11 +49,14 @@ class WishController extends AbstractController
 
         // on instancie notre formulaire
         $wishForm = $this->createForm(WishType::class, $wish);
-
         // on recupere les données du formulaire
         $wishForm->handleRequest($request);
+
         // Si on as reçu le formulaire
         if($wishForm->isSubmitted() && $wishForm->isValid()){
+
+            //on utilise un service
+            $wish->setDescription($censurator->purify($wish->getDescription()));
 
             //enregistre en base de données
             $entityManager->persist($wish);
